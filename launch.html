@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Juniper Networks</title>
+        <!--<link href="http://www.pipwerks.com/css/simpleStyling.css" rel="stylesheet" type="text/css">-->
+        <script type="text/javascript" src="engine/js/jquery-1.8.3.js"></script>
+        <!--<script src="engine/js/jquery.xdomainrequest.min.js"></script>-->
+        <script type="text/javascript" src="engine/js/SCORM_API_wrapper.js"></script>
+        
+        <script type="text/javascript" src="engine/js/scorm_functions.js"></script>
+       
+		<script type="text/javascript" src="engine/js/jquery-ui.js"></script>   
+        <script type="text/javascript"  src="engine/js/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript" src="engine/js/jquery-timego-1.0.6.min.js"></script>
+        <!--<script src="engine/js/jquery.ui.touch.js"></script> 
+        <script type="text/javascript" src="engine/js/debug.js"></script>-->  
+		  
+		<script type="text/javascript" src="engine/js/app.min.js"></script>
+        
+		<link rel="stylesheet" href="engine/css/jquery-ui.css">
+		<link rel="stylesheet" href="themes/skyblue/css/app.min.css">
+        <!--<link rel="stylesheet" href="engine/css/mobile.css">-->
+        <link rel="stylesheet" href="content/css/style.css">
+		 
+              
+   <script type="text/javascript">
+	
+	var isInternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+	var intWinWidth = 1016;//getParameterByName("width");
+	var intWinHeight = 740;//getParameterByName("height");
+	top.resizeTo(intWinWidth,intWinHeight);
+	top.moveTo(0,0);
+	window.onresize = resize;
+
+	function resize()
+	{
+		top.resizeTo(intWinWidth,intWinHeight);
+		top.moveTo(0,0);
+	}
+
+</script>
+
+<!--Google Analytics Tracking Code-->
+<!--http://www.google-analytics.com/ga.js-->
+ <script src="engine/js/ga.js"></script> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  <!--Google Analytics Juniper A/C UA-37860755-1-->
+  _gaq.push(['_setAccount', 'UA-8959870-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+    </head>
+    <body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+	<div id="div-main">
+        <div id="div-header">
+            <div id="header-area">
+                <div id="logo-space">&nbsp;</div><div id="coursetitle"></div>
+            </div>
+            <div id="search-bar">
+        		<div id="maintitle"></div>
+                
+                <div id="searchbtn-holder"><span id="searchbtn">Search</span></div>
+                <div id="search-box">
+                <div id="div-searchpanel">
+                	<div id="searchdiv">
+                    <span><input type='text' id='searchtext' name='searchtext' placeholder='search' value='' style='position:absolute;left:9px;top:10px;height:22px;outline:none;border:none;width:149px;' /></span><span onClick="" style="cursor:pointer"><img id='searchgo' src='themes/skyblue/images/searchbtn.png' height='44' width='43' alt='' style='margin-left:170px;'/></span><span class="close_btn" id="search_close"><img src='themes/skyblue/images/close_btn_black.png' /></span><br/><span style='font-size:10px;margin-left:10px;margin-top:-5px;'><input type='checkbox' id='matchphrase' checked/>Search exact phrase</span>
+                    </div>
+                	</div>
+                </div>
+            </div>
+        	<div id="subtitle"></div>
+        </div>
+        <div id="mainHolder">
+        	<div id="error"></div>
+            <div id="search-result"><div id="loadmsg" style="display:none; left:200px;" >Loading....</div></div>
+            <div id="left_menu_toggler"></div>
+            <div class="slide" id="slideHolder"></div>
+            <div id="notes"></div>
+            <div id="toc"></div>
+            <div id="ipad_btn_holder" style="display:none;">
+                <button style="position: absolute; z-index:9999;" id="ipad_btn"><img id='bigIpadBtn' src='themes/skyblue/images/ipadbtn.png'/></button>
+                <div class="ui-widget-overlay"  style="position:absolute; z-index:9990;"></div>
+        	</div>
+    	</div>
+        <!--a dummy div to give overlay height on ipad play button--> 
+        <div style="height:39px"></div>
+        <!--a dummy div to give overlay height on ipad play button -->
+	</div>
+	<div id="div-footer">
+        <div id="nav-left">
+        	<span title="Menu" id="menu1" style="float:right"><span class="menu_hilight" id="menu_hilight"><IMG SRC="themes/skyblue/images/menu_hilight.png" BORDER="0" ALT="" align="right"  style="cursor:pointer"></span><IMG SRC="themes/skyblue/images/menu.png" BORDER="0" ALT="" align="right"  style="cursor:pointer"></span>
+        </div>
+        <div id="nav-left-slider">
+            <div class="menu-align">
+            	<div id="currentTime" style="float:left;"></div>
+                <div id="slider" style="float:left;"></div>
+                <div id="duration" style="float:left;"></div>
+            </div>
+        </div>
+        <div id="nav-center">
+        	<span title="Back" id="prevBtn" style="width:48px;" onclick="" style="cursor:pointer"><IMG SRC="themes/skyblue/images/back.png" BORDER="0" ALT="" ></span>
+            <span style="width:45px;"  onclick="" style="cursor:pointer"><IMG id="playpause" SRC="themes/skyblue/images/pause.png" BORDER="0" title="Play/Pause" ALT=""></span>
+            <span title="Next" id="nextBtn" style="width:52px;" onclick="" style="cursor:pointer"><span class="next_hilight" id="next_hilight"><IMG SRC="themes/skyblue/images/next_hilight.png" BORDER="0" ALT=""></span><IMG id="nextBtn" SRC="themes/skyblue/images/next.png" BORDER="0" ALT=""></span>
+            <span title="Review Tool" id="review-tool" class="review-tool" style="display:none; width:45px; cursor:pointer"  onclick=""><IMG id="review_tool" SRC="themes/skyblue/images/review_tool.png" BORDER="0" ALT=""></span>
+            <span title="Return to Last Page" id="back-search" class="back-search" onClick="" style="cursor:pointer"><IMG id="history" SRC="themes/skyblue/images/back.gif" BORDER="0" ALT="" style="cursor:pointer"></span>
+            <span id='slidenumber' class="slidenumber" onClick="" style="cursor:pointer; display:none">1</span>
+      </div>
+        <div id="nav-right">
+            <span title="Reload" id="reload" onClick="" style="cursor:pointer"><IMG SRC="themes/skyblue/images/reload.png" BORDER="0" ALT=""></span>
+            <span title="Transcript" id="transcript" onClick="" style="cursor:pointer"><IMG SRC="themes/skyblue/images/transcript.png" BORDER="0" ALT=""></span>
+            <span title="Mute" id="mute" onClick="" style="cursor:pointer"><IMG id="muteicon" SRC="themes/skyblue/images/audioon.png" BORDER="0" ALT=""></span>
+            <span title="Help" id="help" onClick="" style="cursor:pointer"><span class="help_hilight" id="help_hilight"><IMG SRC="themes/skyblue/images/help_hilight.png" BORDER="0" ALT="" align="right"></span><IMG SRC="themes/skyblue/images/help.png" BORDER="0" ALT=""></span>
+            <span title="Feedback" id="fb" onClick="" style="cursor:pointer"><IMG SRC="themes/skyblue/images/fb.png" BORDER="0" ALT=""></span>
+        </div>
+    </div>
+
+
+	<div id="time"></div>
+
+	<div>
+		<audio id="audio-player" src="" preload='metadata'></audio>
+	</div>
+	<div id="review_win" class="review_win" style="display:none; overflow:hidden;"><div class="loadmsg">Loading....</div></div>
+	<div id="loadmsg">Setting Layout....</div>
+	<div id="help-window" style="display:none;">
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><img src="themes/skyblue/images/help_popup_audio.png" /></td>
+			<td><img src="themes/skyblue/images/help_popup_playpause.png" /></td>
+		</tr>
+		<tr>
+			<td><img src="themes/skyblue/images/help_popup_help.png" /></td>
+			<td><img src="themes/skyblue/images/help_popup_feedback.png" /></td>
+		</tr>
+		<tr>
+			<td><img src="themes/skyblue/images/help_popup_menu.png" /></td>
+			<td><img src="themes/skyblue/images/help_popup_transcript.png" /></td>
+		</tr>
+		<tr>
+			<td><img src="themes/skyblue/images/help_popup_next.png" /></td>
+			<td><img src="themes/skyblue/images/help_popup_previous.png" /></td>
+		</tr>
+		<tr>
+        	<td><img src="themes/skyblue/images/help_popup_slider.png" /></td>
+			<td><img src="themes/skyblue/images/help_popup_search.png" /></td>
+		</tr>
+	</table>
+    
+  </div>
+  <div id="clickNext" class="clickNext ui-tooltip ui-widget ui-corner-all ui-widget-content" style="display: block; opacity: 1;"><div class="ui-tooltip-content">Click Next to Continue</div><div class="arrow bottom center"></div></div>
+
+  <div id="return" class="ui-tooltip ui-widget ui-corner-all ui-widget-content" style="display:block; opacity: 1;"><div class="ui-tooltip-content">Return to Last Page</div><div class="arrow bottom center"></div></div>
+  
+<div id="debugConsole" style="display:none;"><p id="debugText"></p></div>
+
+</body>
+</html>
